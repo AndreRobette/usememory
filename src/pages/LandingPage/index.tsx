@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Button, ButtonContainer, Container } from "./styles";
+import { Button, ButtonContainer, Container, Set } from "./styles";
 
 const LandingPage: React.FC = () => {
   return (
@@ -11,6 +11,17 @@ const LandingPage: React.FC = () => {
         <span>MEMO</span>
         <span>ry</span>
       </h1>
+      <Set>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+        <div><img src="/images/leaf.svg" alt=""/></div>
+      </Set>
       <ButtonContainer>
         <Link href="/TutorialPage">
           <Button color="#684500" title="#38D438">
