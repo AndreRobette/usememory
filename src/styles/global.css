@@ -6,19 +6,16 @@
 
 :root {
     --brown: #684500;
-    --brown-hover: #996E1B;
     --light-green: #38D438;
-    --light-green-hover: #18B518;
     --green: #0C7E0C;
     --yellow: #F1FF53;
-    --yellow-hover: #FAFF00;
     --red: #FF5757;
-    --red-hover: #FF0000;
     --text: #2e384d;
     --aside: rgba(196, 196, 196, 0.5);
     --background: #F0F0F5;
     --gray-line: #dcdde0;
     --timer: #EDEDED;
+    --white: #FFFFFF;
 }
 
 

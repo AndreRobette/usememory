@@ -1,12 +1,20 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Grid } from './styles';
 
-const GamePage: React.FC = () => {
+import MainHeader from '../../components/MainHeader';
+import Aside from '../../components/Aside';
+import Game from '../../components/Game';
+
+function GamePage({ children }) {
   return (
-    <Container>
-      <h1>GamePage</h1>
-    </Container>
+    <Grid>
+      <MainHeader/>
+      <Aside/>
+      <Game>
+        {children}
+      </Game>
+    </Grid>
   );
 };
 
