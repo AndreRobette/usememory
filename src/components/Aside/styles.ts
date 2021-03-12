@@ -58,6 +58,7 @@ export const MenuItem = styled.button`
     transition: 0.2s;
 
     :hover {
+        transform: scale(1.02);
         filter: contrast(1.5);
     }
 `;
