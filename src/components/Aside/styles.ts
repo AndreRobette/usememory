@@ -20,7 +20,7 @@ export const Header = styled.header`
     
     height: 10%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 `;
 
 export const Title = styled.h1`    

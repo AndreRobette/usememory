@@ -7,7 +7,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    padding: 50px 40px;
+    padding: 65px 65px;
 `;
 
 export const Icon = styled.img``;
