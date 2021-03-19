@@ -11,7 +11,7 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const Card = styled.div`
+const Card = styled.a`
     background-color: var(--light-green);
 
     display: flex;
