@@ -55,6 +55,13 @@ const GamePage: React.FC = () => {
                 <span>ry</span>
               </CardBack>
             </Card>
+            <Card>
+              <CardBack>
+                <span>use</span>
+                <span>MEMO</span>
+                <span>ry</span>
+              </CardBack>
+            </Card>
         </Container>
     );
 };

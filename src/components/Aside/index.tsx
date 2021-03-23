@@ -9,13 +9,12 @@ function Aside() {
   return (
     <Container>
       <Header><Title>Nível 1</Title></Header>
-
       <MenuContainer>
         <MenuItem color='#F1FF53'>
           Pausar <FiPauseCircle/>
         </MenuItem>
         <MenuItem color='#FF5757'>
-          Desistir <FiStopCircle/>
+          Desistir<FiStopCircle/>
         </MenuItem>
       </MenuContainer>
 
