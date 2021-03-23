@@ -140,6 +140,10 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 2.62rem;
   font-weight: bold;
 
@@ -156,6 +160,14 @@ export const Button = styled.button`
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 
   transition: 0.2s;
+
+  h4 {
+    margin-right: 10px;
+  }
+
+  svg {
+    font-size: 2.5rem;
+  }
 
   :hover {
     transform: scale(1.1);
