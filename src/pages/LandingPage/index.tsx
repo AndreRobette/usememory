@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
+import { AiFillPlayCircle, AiFillQuestionCircle } from "react-icons/ai";
+
 import { Button, ButtonContainer, Container, Set } from "./styles";
 
 const LandingPage: React.FC = () => {
@@ -25,17 +27,17 @@ const LandingPage: React.FC = () => {
       <ButtonContainer>
         <Link href="/TutorialPage">
           <Button color="#684500" title="#38D438">
-            TUTORIAL
+            <h4>TUTORIAL</h4> <AiFillQuestionCircle/>
           </Button>
         </Link>
         <Link href="/GamePage">
           <Button color="#38D438" title="#684500">
-            JOGAR
+          <h4>JOGAR</h4> <AiFillPlayCircle/>
           </Button>
         </Link>
-        <Link href="AboutPage">
+        <Link href="/AboutPage">
           <Button color="#684500" title="#38D438">
-            SAIBA MAIS
+          <h4>SAIBA MAIS</h4>
           </Button>
         </Link>
       </ButtonContainer>
