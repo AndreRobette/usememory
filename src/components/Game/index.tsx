@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import {
     GiFeline as Cat,
@@ -12,13 +12,26 @@ import {
     GiSnake as Snake,
     GiElephant as Elephant,
 } from "react-icons/gi";
+import { CountdownContext, CountdownProvider } from "../../contexts";
 
 import { Container, Card, CardBack } from "./styles";
 
+// window.onload{
+//     startCountdown();
+// }
+
 const GamePage: React.FC = () => {
+const {minutes, 
+    seconds, 
+    hasFinished, 
+    isActive, 
+    startCountdown, 
+    resetCountdown} = useContext(CountdownContext)
+
     return (
+        <CountdownProvider>
         <Container>
-            <Card>
+            <Card onClick={startCountdown}>
                 <Cat size={140}/>
             </Card>
             <Card>
@@ -63,6 +76,7 @@ const GamePage: React.FC = () => {
               </CardBack>
             </Card>
         </Container>
+    </CountdownProvider>
     );
 };
 

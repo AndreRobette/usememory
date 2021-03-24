@@ -31,9 +31,14 @@ export const Title = styled.h1`
 export const MenuContainer = styled.nav`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 
     height: 80%;
+`;
+
+export const Div = styled.div`
+    width: 80%;
 `;
 
 export const MenuItem = styled.button`
