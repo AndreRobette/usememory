@@ -44,6 +44,7 @@ export function Countdown() {
         </Container>
       </Overlay>}
       <CountdownContainer>
+
         <div>
           <span>{minuteLeft}</span>
           <span>{minuteRight}</span>
@@ -53,10 +54,16 @@ export function Countdown() {
           <span>{secondLeft}</span>
           <span>{secondRight}</span>
         </div>
+        
       </CountdownContainer>
+      {isActive ? (
       <MenuItem onClick={pauseCountdown} color="#F1FF53">
         Pausar <FiPauseCircle />
-      </MenuItem>
+      </MenuItem> ) : (
+        <MenuItem onClick={startCountdown} color="#F1FF53">
+        Continue <FiPauseCircle />
+      </MenuItem> 
+      )}
       <MenuItem onClick={resetCountdown} color="#FF5757">
         Reiniciar <FiStopCircle />
       </MenuItem>
