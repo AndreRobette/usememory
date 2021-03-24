@@ -20,6 +20,7 @@ const Card = styled.a`
 
     width: 11.563rem;
     height: 11.563rem;
+    
 
     border-radius: 10px;
 
@@ -43,11 +44,6 @@ const CardBack = styled.div`
 
     width: 7.5rem;
     height: 7.5rem;
-
-    background: rgba(230, 230, 230, 0.5);
-    border-radius: 20px;
-
-    padding: 0.625rem;
 
     > span:nth-child(1) {
         display: flex;
