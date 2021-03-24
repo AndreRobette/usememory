@@ -60,8 +60,8 @@ export function Countdown() {
       <MenuItem onClick={pauseCountdown} color="#F1FF53">
         Pausar <FiPauseCircle />
       </MenuItem> ) : (
-        <MenuItem onClick={startCountdown} color="#F1FF53">
-        Continue <FiPauseCircle />
+        <MenuItem onClick={startCountdown} color="#38D438">
+        Continue <FiPlayCircle />
       </MenuItem> 
       )}
       <MenuItem onClick={resetCountdown} color="#FF5757">
