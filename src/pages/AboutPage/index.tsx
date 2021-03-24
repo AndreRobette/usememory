@@ -8,6 +8,12 @@ import {
     MainText,
 } from "./styles";
 
+const Andre = "/images/andre.png";
+const Pietro = "/images/pietro.png";
+const Julya = "/images/julya.png";
+const Lucas = "/images/lucas.png";
+const Mateus = "/images/mateus.png";
+
 const AboutPage: React.FC = () => {
     return (
         <Container>
@@ -26,38 +32,40 @@ const AboutPage: React.FC = () => {
                 <hr />
                 <Collaborators>
                     <CollaboratorProfile
-                        href="https://www.linkedin.com/in/andr%C3%A9-robette-7137891a1/"
+                        href={
+                            "https://www.linkedin.com/in/andr%C3%A9-robette-7137891a1/"
+                        }
                         target="_blank"
                     >
-                        <img src="/images/andre.png" alt="André Robette" />
+                        <img src={Andre} alt="André Robette" />
                         <h2>André Robette</h2>
                     </CollaboratorProfile>
                     <CollaboratorProfile
                         href="https://www.linkedin.com/in/gabriel-pietro-de-souza-9057431b7/"
                         target="_blank"
                     >
-                        <img src="/images/pietro.png" alt="Gabriel Pietro" />
+                        <img src={Pietro} alt="Gabriel Pietro" />
                         <h2>Gabriel P. de Souza</h2>
                     </CollaboratorProfile>
                     <CollaboratorProfile
                         href="https://www.linkedin.com/in/julya-brustolin-marssona-4812361a3/"
                         target="_blank"
                     >
-                        <img src="/images/julya.png" alt="Julya Brustolin" />
+                        <img src={Julya} alt="Julya Brustolin" />
                         <h2>Julya Marssona</h2>
                     </CollaboratorProfile>
                     <CollaboratorProfile
                         href="https://www.linkedin.com/in/lucaschitolina/"
                         target="_blank"
                     >
-                        <img src="/images/lucas.png" alt="Lucas Chitolina" />
+                        <img src={Lucas} alt="Lucas Chitolina" />
                         <h2>Lucas Chitolina</h2>
                     </CollaboratorProfile>
                     <CollaboratorProfile
                         href="https://www.linkedin.com/in/mateus-putti-0a615220a/"
                         target="_blank"
                     >
-                        <img src="/images/putti.png" alt="Mateus Putti" />
+                        <img src={Mateus} alt="Mateus Putti" />
                         <h2>Mateus J. Putti</h2>
                     </CollaboratorProfile>
                 </Collaborators>
