@@ -41,33 +41,6 @@ export const Div = styled.div`
     width: 80%;
 `;
 
-export const MenuItem = styled.button`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-    height: 80px;
-    
-    background-color: ${(props) => props.color};
-    color: var(--title);
-    border-radius: 10px;
-    border: 0;
-
-    margin: 20px 0;
-    padding: 20px;
-
-    font-weight: 500;
-    font-size: 2rem;
-
-    transition: 0.2s;
-
-    :hover {
-        transform: scale(1.02);
-        filter: contrast(1.5);
-    }
-`;
-
 export const Footer = styled.footer`
     display: flex;
     justify-content: space-evenly;

@@ -6,7 +6,6 @@ import {
   FooterItem,
   Header,
   MenuContainer,
-  MenuItem,
   Title,
   Div
 } from "./styles";
@@ -27,16 +26,7 @@ function Aside() {
       <CountdownProvider>
         <Countdown />
       </CountdownProvider>
-      <Div>
-        <MenuItem color="#F1FF53">
-          Pausar <FiPauseCircle />
-        </MenuItem>
-        <MenuItem color="#FF5757">
-          Reiniciar <FiStopCircle />
-        </MenuItem>
-        </Div>
       </MenuContainer>
-
       <Footer>
         <FooterItem>
           <Link href="LandingPage">
