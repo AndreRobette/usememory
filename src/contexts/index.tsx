@@ -7,7 +7,7 @@ interface CountdownContextData {
     isActive: boolean;
     startCountdown: () => void;
     resetCountdown: () => void;
-
+    pauseCountdown: () => void;
 }
 
 interface CountdownProviderProps{
@@ -19,6 +19,8 @@ export const CountdownContext = createContext({} as CountdownContextData)
 let countdownTimeout: NodeJS.Timeout;
 
 export function CountdownProvider({children} : CountdownProviderProps) {
+
+    
 
     const [time, setTime] = useState(10 * 60);
     const [isActive, setIsActive] = useState(false);
@@ -37,6 +39,12 @@ export function CountdownProvider({children} : CountdownProviderProps) {
         setHasFinished(false);
         setTime(10*60);
     }
+
+    function pauseCountdown() {
+        setIsActive(false);
+    }
+
+    
 
     useEffect(() => {
         if (isActive && time>0){
@@ -58,6 +66,7 @@ export function CountdownProvider({children} : CountdownProviderProps) {
             isActive,
             startCountdown,
             resetCountdown,
+            pauseCountdown
         }}>
             {children}
         </CountdownContext.Provider>
