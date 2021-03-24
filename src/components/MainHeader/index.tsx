@@ -7,7 +7,7 @@ function MainHeader() {
     return (
         <Container>
             <Link href="/LandingPage">
-                <Icon src="/images/HeaderIcon.svg" alt="usememory" />
+                <Icon src="/images/headerIcon.svg" alt="usememory" />
             </Link>
             <Score>Pontuação: 100</Score>
         </Container>
