@@ -13,7 +13,6 @@ import {
     GiElephant as Elephant,
 } from "react-icons/gi";
 
-
 const cardBack = '/images/cardBack.svg'
 import { CountdownContext, CountdownProvider } from "../../contexts";
 
