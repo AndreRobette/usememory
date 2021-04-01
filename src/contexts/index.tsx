@@ -22,7 +22,7 @@ export function CountdownProvider({children} : CountdownProviderProps) {
 
     
 
-    const [time, setTime] = useState(10 * 60);
+    const [time, setTime] = useState(0.6 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -37,7 +37,7 @@ export function CountdownProvider({children} : CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(true);
         setHasFinished(false);
-        setTime(10*60);
+        setTime(0.6*60);
     }
 
     function pauseCountdown() {
