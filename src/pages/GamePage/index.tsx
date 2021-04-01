@@ -5,16 +5,20 @@ import { Grid } from './styles';
 import MainHeader from '../../components/MainHeader';
 import Aside from '../../components/Aside';
 import Game from '../../components/Game';
+import { LevelingProvider } from '../../contexts/LevelingContext';
 
 function GamePage({ children }) {
+
   return (
-    <Grid>
-      <MainHeader/>
-      <Aside/>
-      <Game>
-        {children}
-      </Game>
-    </Grid>
+    <LevelingProvider>
+      <Grid>
+        <MainHeader />
+        <Aside />
+        <Game>
+          {children}
+        </Game>
+      </Grid>
+    </LevelingProvider>
   );
 };
 

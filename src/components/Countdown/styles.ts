@@ -69,6 +69,7 @@ export const MenuItem = styled.button`
 
 export const Overlay = styled.div`
     background: rgba(242, 243, 245, 0.8);
+    z-index:5;
     position: fixed;
     top: 0;
     bottom: 0;
