@@ -15,15 +15,15 @@ import {
     GiElephant as Elephant,
 } from "react-icons/gi";
 
-const cardBack = '/images/cardBack.svg'
-import { Container, Card } from "./styles";
+const cardBack = "/images/cardBack.svg";
+import { Container, CardContainer, Card } from "./styles";
 import { LevelingContext } from "../../contexts/LevelingContext";
 
 const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
 
     useEffect(() => {
-        const cards = document.querySelectorAll('.memory-card');
+        const cards = document.querySelectorAll(".memory-card");
         var counter = 0;
         var hasFlippedCard = false;
         var lockBoard = false;
@@ -33,7 +33,7 @@ const GamePage: React.FC = () => {
             if (lockBoard) return;
             if (this === firstCard) return;
 
-            this.classList.toggle('flip');
+            this.classList.toggle("flip");
 
             if (!hasFlippedCard) {
                 hasFlippedCard = true;
@@ -54,8 +54,8 @@ const GamePage: React.FC = () => {
         }
 
         function disableCards() {
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
+            firstCard.removeEventListener("click", flipCard);
+            secondCard.removeEventListener("click", flipCard);
 
             counter += 2;
             checkIfAllHasMatched();
@@ -66,8 +66,8 @@ const GamePage: React.FC = () => {
             lockBoard = true;
 
             setTimeout(() => {
-                firstCard.classList.remove('flip');
-                secondCard.classList.remove('flip');
+                firstCard.classList.remove("flip");
+                secondCard.classList.remove("flip");
 
                 resetBoard();
             }, 1000);
@@ -79,15 +79,15 @@ const GamePage: React.FC = () => {
         }
 
         (function shuffle() {
-            cards.forEach(card => {
+            cards.forEach((card) => {
                 let randomPos = Math.floor(Math.random() * render);
                 card.style.order = randomPos;
-            })
+            });
         })();
 
         function checkIfAllHasMatched() {
             if (cards.length === counter) {
-                const flippedCards = document.querySelectorAll('.flip')
+                const flippedCards = document.querySelectorAll(".flip");
 
                 //Todos os cards deram match (usuário ganhou o nível)
                 if (flippedCards.length === cards.length) {
@@ -103,102 +103,105 @@ const GamePage: React.FC = () => {
                     } else if (level === 5) {
                         setPoints(1000);
                     }
-                    console.log('passou de nivel:', level);
+                    console.log("passou de nivel:", level);
                 }
             }
         }
 
-        cards.forEach(card => card.addEventListener('click', flipCard));
+        cards.forEach((card) => card.addEventListener("click", flipCard));
     }, [level]);
 
     useEffect(() => {
-        let getCardsToUnflip = document.getElementsByClassName('memory-card flip');
-        console.log('cima', getCardsToUnflip.length);
+        let getCardsToUnflip = document.getElementsByClassName("memory-card flip");
+        console.log("cima", getCardsToUnflip.length);
 
         for (var i = 0; i < getCardsToUnflip.length; i++) {
             console.log(getCardsToUnflip.length);
             let element = getCardsToUnflip[i];
-            element.classList.remove('flip');
+            element.classList.remove("flip");
             console.log(getCardsToUnflip);
         }
 
         if (getCardsToUnflip.length === 8) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip');
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 7) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip'); ''
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
+            ("");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 6) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip');
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 5) {
-            let cardToUnflip = document.getElementsByClassName('memory-card flip'); ''
-            cardToUnflip[0].classList.remove('flip');
+            let cardToUnflip = document.getElementsByClassName("memory-card flip");
+            ("");
+            cardToUnflip[0].classList.remove("flip");
         }
 
         if (getCardsToUnflip.length === 4) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip');
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 3) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip'); ''
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
+            ("");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 2) {
-            let cardsToUnflip = document.getElementsByClassName('memory-card flip');
+            let cardsToUnflip = document.getElementsByClassName("memory-card flip");
             for (var i = 0; i < cardsToUnflip.length; i++) {
                 let element = cardsToUnflip[i];
-                element.classList.remove('flip');
+                element.classList.remove("flip");
             }
         }
 
         if (getCardsToUnflip.length === 1) {
-            let cardToUnflip = document.getElementsByClassName('memory-card flip'); ''
-            cardToUnflip[0].classList.remove('flip');
+            let cardToUnflip = document.getElementsByClassName("memory-card flip");
+            ("");
+            cardToUnflip[0].classList.remove("flip");
         }
-
     }, [level]);
 
     function showCards() {
         if (level === 1) {
             return (
                 <>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -207,35 +210,35 @@ const GamePage: React.FC = () => {
         } else if (level === 2) {
             return (
                 <>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card >
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -244,35 +247,35 @@ const GamePage: React.FC = () => {
         } else if (level === 3) {
             return (
                 <>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card >
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -297,35 +300,35 @@ const GamePage: React.FC = () => {
         } else if (level === 4) {
             return (
                 <>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card >
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -366,35 +369,35 @@ const GamePage: React.FC = () => {
         } else if (level === 5) {
             return (
                 <>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat" >
+                    <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig" >
+                    <Card id="card" className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep" >
+                    <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card >
-                    <Card id="card" className="memory-card" data-framework="rooster" >
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -451,9 +454,26 @@ const GamePage: React.FC = () => {
         } else if (level === 6) {
             return (
                 <>
-                    <div style={{ display: 'flex', justifySelf: 'center', alignSelf: 'center', flexDirection: 'column', wordWrap: 'break-word', width: '50%', height: '350px', justifyContent: 'space-evenly', textAlign: 'center', border: '5px solid #1bb31b', borderRadius: '20px', padding: '30px', cursor: 'default', backgroundColor: 'white' }}>
-                        <h1 style={{ color: "#38D438", fontSize: '50px' }}>Parabéns! </h1>
-                        <h2 style={{ color: "#5c5c5c", marginTop: '25px', fontSize: '30px' }}>Você terminou o jogo com {points} pontos!</h2>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifySelf: "center",
+                            alignSelf: "center",
+                            flexDirection: "column",
+                            wordWrap: "break-word",
+                            width: "50%",
+                            height: "350px",
+                            justifyContent: "space-evenly",
+                            textAlign: "center",
+                            border: "5px solid #1bb31b",
+                            borderRadius: "20px",
+                            padding: "30px",
+                            cursor: "default",
+                            backgroundColor: "white",
+                        }}
+                    >
+                        <h1 style={{ color: "#38D438", fontSize: "50px" }}>Parabéns! </h1>
+                        <h2 style={{ color: "#5c5c5c", marginTop: "25px", fontSize: "30px" }}>Você terminou o jogo com {points} pontos!</h2>
                     </div>
                 </>
             );
@@ -462,9 +482,7 @@ const GamePage: React.FC = () => {
 
     return (
         <CountdownProvider>
-            <Container>
-                {showCards()}
-            </Container>
+            <Container>{showCards()}</Container>
         </CountdownProvider>
     );
 };
