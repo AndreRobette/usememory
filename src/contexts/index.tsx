@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { LevelingContext } from "./LevelingContext";
 
 interface CountdownContextData {
     minutes: number;
@@ -8,6 +9,7 @@ interface CountdownContextData {
     startCountdown: () => void;
     resetCountdown: () => void;
     pauseCountdown: () => void;
+    timer: () => void;
 }
 
 interface CountdownProviderProps {
@@ -19,6 +21,7 @@ export const CountdownContext = createContext({} as CountdownContextData)
 let countdownTimeout: NodeJS.Timeout;
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
+    const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext)
 
     const [time, setTime] = useState(10 * 60);
     const [isActive, setIsActive] = useState(false);
@@ -42,6 +45,18 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         setIsActive(false);
     }
 
+    function timer() {
+        if (level===2){
+            setTime(9);
+        }
+        if (level===3){
+            setTime(8);
+        }
+        if (level===4){
+            setTime(7);
+        }
+    }
+
     useEffect(() => {
         if (isActive && time > 0) {
             countdownTimeout = setTimeout(() => {
@@ -60,6 +75,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
             seconds,
             hasFinished,
             isActive,
+            timer,
             startCountdown,
             resetCountdown,
             pauseCountdown
