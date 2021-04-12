@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import {
   Container,
@@ -15,17 +15,20 @@ import { FiVolume2, FiPauseCircle, FiStopCircle } from "react-icons/fi";
 import { Countdown } from "../Countdown/index";
 import { CountdownProvider } from "../../contexts/index";
 import Link from "next/link";
+import { LevelingContext } from "../../contexts/LevelingContext";
 
 function Aside() {
+  const { level } = useContext(LevelingContext);
+
   return (
     <Container>
       <Header>
-        <Title>Nível 1</Title>
+        <Title>Nível {level}</Title>
       </Header>
       <MenuContainer>
-      <CountdownProvider>
-        <Countdown />
-      </CountdownProvider>
+        <CountdownProvider>
+          <Countdown />
+        </CountdownProvider>
       </MenuContainer>
       <Footer>
         <FooterItem>

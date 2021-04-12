@@ -34,15 +34,15 @@ export function Countdown() {
 
   return (
     <div>
-      {playModal && 
-      <Overlay>
-        <Container>
-          <Strong>Clique para iniciar</Strong>
-          <Button onClick={closePlayModal}>
-           <FiPlayCircle size={50} color="#2e384d"/>
-          </Button>
-        </Container>
-      </Overlay>}
+      {playModal &&
+        <Overlay >
+          <Container>
+            <Strong>Clique para iniciar</Strong>
+            <Button onClick={closePlayModal}>
+              <FiPlayCircle size={50} color="#2e384d" />
+            </Button>
+          </Container>
+        </Overlay>}
       <CountdownContainer>
 
         <div>
@@ -54,15 +54,15 @@ export function Countdown() {
           <span>{secondLeft}</span>
           <span>{secondRight}</span>
         </div>
-        
+
       </CountdownContainer>
       {isActive ? (
-      <MenuItem onClick={pauseCountdown} color="#F1FF53">
-        Pausar <FiPauseCircle />
-      </MenuItem> ) : (
+        <MenuItem onClick={pauseCountdown} color="#F1FF53">
+          Pausar <FiPauseCircle />
+        </MenuItem>) : (
         <MenuItem onClick={startCountdown} color="#38D438">
-        Continue <FiPlayCircle />
-      </MenuItem> 
+          Continue <FiPlayCircle />
+        </MenuItem>
       )}
       <MenuItem onClick={resetCountdown} color="#FF5757">
         Reiniciar <FiStopCircle />

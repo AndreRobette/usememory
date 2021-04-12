@@ -6,6 +6,7 @@ export const CountdownContainer = styled.div`
   font-weight: 500;
   color: #2E384D;
 
+
   > div {
     flex: 1;
     align-items: center;
@@ -15,15 +16,16 @@ export const CountdownContainer = styled.div`
     background: var(--timer);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
-    font-size: 8.5rem;
+    font-size: 6.5rem;
     text-align: center;
     display: flex;
+    width: 140px;
     
   }
 
   > div span {
     flex: 1;
-    width: 90px;
+    width: 30px;
   }
 
   > div span:first-child {
@@ -69,6 +71,7 @@ export const MenuItem = styled.button`
 
 export const Overlay = styled.div`
     background: rgba(242, 243, 245, 0.8);
+    z-index:5;
     position: fixed;
     top: 0;
     bottom: 0;
