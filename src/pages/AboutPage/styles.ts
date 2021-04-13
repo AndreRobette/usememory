@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MainHeader from "../../components/MainHeader";
 
 export const Container = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const Container = styled.div`
 
 export const MainText = styled.h2`
   max-width: 39.375rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 
   text-align: center;
@@ -103,3 +104,13 @@ export const CollaboratorProfile = styled.a`
     }
   }
 `;
+
+export const More = styled.a`
+  cursor: pointer;
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: bold;
+`;
+
+
+  

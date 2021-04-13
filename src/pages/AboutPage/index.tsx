@@ -1,5 +1,7 @@
 import Head from "next/head";
+
 import React from "react";
+
 
 import {
   CollaboratorProfile,
@@ -7,6 +9,7 @@ import {
   CollaboratorsContainer,
   Container,
   MainText,
+  More,
 } from "./styles";
 
 const Andre = "/images/andre.png";
@@ -14,6 +17,7 @@ const Pietro = "/images/pietro.png";
 const Julya = "/images/julya.png";
 const Lucas = "/images/lucas.png";
 const Mateus = "/images/putti.png";
+const artigo = "useMemory.pdf"
 
 const AboutPage: React.FC = () => {
   return (
@@ -21,6 +25,7 @@ const AboutPage: React.FC = () => {
       <Head>
         <title>useMEMOry</title>
       </Head>
+  
       <h1>
         O que é o <span></span>
         <span>use</span>
@@ -28,9 +33,13 @@ const AboutPage: React.FC = () => {
         <span>ry</span>
       </h1>
       <MainText>
-        Nosso projeto consiste em desenvolver um jogo da memória para pessoas
-        com deficiência intelectual
+      É um jogo da memória online que auxilia no tratamento pedagógico de crianças com deficiência intelectual. Busca ajudar na concentração, raciocínio e memória fotográfica.
       </MainText>
+
+      <More href={artigo} target="_blank">
+        Saiba mais
+      </More>
+
       <CollaboratorsContainer>
         <h1>Colaboradores</h1>
         <hr />

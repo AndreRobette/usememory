@@ -21,6 +21,8 @@ import { LevelingContext } from "../../contexts/LevelingContext";
 import { CountdownContext } from "../../contexts/index";
 import { levelUp } from "../LevelUpModal";
 import { AiFillPlayCircle } from "react-icons/ai";
+import Link from "next/link";
+import { Icon } from "../MainHeader/styles";
 
 const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
@@ -254,14 +256,14 @@ const GamePage: React.FC = () => {
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
+                    {/* <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card id="card" className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
+                    </Card> */}
                 </Container>
             );
         } else if (level === 3) {
@@ -307,14 +309,14 @@ const GamePage: React.FC = () => {
                         <Cow size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="gorilla">
+                    {/* <Card className="memory-card" data-framework="gorilla">
                         <Gorilla size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card className="memory-card" data-framework="gorilla">
                         <Gorilla size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
+                    </Card> */}
                 </Container>
             );
         } else if (level === 4) {
@@ -376,14 +378,14 @@ const GamePage: React.FC = () => {
                         <Duck size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="bird">
+                    {/* <Card className="memory-card" data-framework="bird">
                         <Bird size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card className="memory-card" data-framework="bird">
                         <Bird size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
+                    </Card> */}
                 </Container>
             );
         } else if (level === 5) {
@@ -461,14 +463,14 @@ const GamePage: React.FC = () => {
                         <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="elephant">
+                    {/* <Card className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
+                    </Card> */}
                 </Container>
             );
         } else if (level === 6) {
@@ -501,7 +503,9 @@ const GamePage: React.FC = () => {
     }
 
     return (
+     
         <CountdownProvider>
+           
             {levelUpModal && (
                 <Modal>
                     <img src="/images/icon.svg"></img>
