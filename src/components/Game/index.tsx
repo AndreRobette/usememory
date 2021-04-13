@@ -229,6 +229,43 @@ const GamePage: React.FC = () => {
             );
         } else if (level === 2) {
             return (
+                <Container style={{ gridTemplateColumns: "200px 200px 200px", gridTemplateRows: "200px 200px" }}>
+                    <Card id="card" className="memory-card" data-framework="cat">
+                        <Cat size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="cat">
+                        <Cat size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="pig">
+                        <Pig size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="pig">
+                        <Pig size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="sheep">
+                        <Sheep size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="sheep">
+                        <Sheep size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    {/* <Card id="card" className="memory-card" data-framework="rooster">
+                        <Rooster size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
+                        <Rooster size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card> */}
+                </Container>
+            );
+        } else if (level === 3) {
+            return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px 200px", gridTemplateRows: "200px 200px" }}>
                     <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
@@ -262,9 +299,94 @@ const GamePage: React.FC = () => {
                         <Rooster size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
+                    {/* <Card className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="gorilla">
+                        <Gorilla size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="gorilla">
+                        <Gorilla size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card> */}
                 </Container>
             );
-        } else if (level === 3) {
+        } else if (level === 4) {
+            return (
+                <Container style={{ gridTemplateColumns: "200px 200px 200px 200px 200px", gridTemplateRows: "200px 200px" }}>
+                    <Card id="card" className="memory-card" data-framework="cat">
+                        <Cat size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="cat">
+                        <Cat size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="pig">
+                        <Pig size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="pig">
+                        <Pig size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="sheep">
+                        <Sheep size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="sheep">
+                        <Sheep size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
+                        <Rooster size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="rooster">
+                        <Rooster size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    {/* <Card className="memory-card" data-framework="gorilla">
+                        <Gorilla size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="gorilla">
+                        <Gorilla size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card> */}
+                    {/* <Card className="memory-card" data-framework="duck">
+                        <Duck size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="duck">
+                        <Duck size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="bird">
+                        <Bird size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card className="memory-card" data-framework="bird">
+                        <Bird size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card> */}
+                </Container>
+            );
+        } else if (level === 5) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px 200px", gridTemplateRows: "200px 200px 200px" }}>
                     <Card id="card" className="memory-card" data-framework="cat">
@@ -315,60 +437,7 @@ const GamePage: React.FC = () => {
                         <Gorilla size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                </Container>
-            );
-        } else if (level === 4) {
-            return (
-                <Container style={{ gridTemplateColumns: "200px 200px 200px 200px", gridTemplateRows: "200px 200px 200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="duck">
+                    {/* <Card className="memory-card" data-framework="duck">
                         <Duck size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -383,77 +452,8 @@ const GamePage: React.FC = () => {
                     <Card className="memory-card" data-framework="bird">
                         <Bird size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                </Container>
-            );
-        } else if (level === 5) {
-            return (
-                <Container style={{ gridTemplateColumns: "200px 200px 200px 200px 200px", gridTemplateRows: "200px 200px 200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="snake">
+                    </Card> */}
+                    {/* <Card className="memory-card" data-framework="snake">
                         <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
@@ -468,7 +468,7 @@ const GamePage: React.FC = () => {
                     <Card className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
+                    </Card> */}
                 </Container>
             );
         } else if (level === 6) {
