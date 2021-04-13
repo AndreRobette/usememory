@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { AiFillPlayCircle, AiFillQuestionCircle } from "react-icons/ai";
 
-import { Button, ButtonContainer, Container, Set, Modal, Text, Accept } from "./styles";
+import { Button, ButtonContainer, Container, Set, Modal, Text } from "./styles";
 import Head from "next/head";
 
 const LandingPage: React.FC = () => {

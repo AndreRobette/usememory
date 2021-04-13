@@ -1,45 +1,55 @@
 import styled from "styled-components";
 
 export const CountdownContainer = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  color: #2E384D;
-
-
-  > div {
-    flex: 1;
-    align-items: center;
-    justify-content: space-evenly;
-    
-
-    background: var(--timer);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    font-size: 6.5rem;
-    text-align: center;
     display: flex;
-    width: 140px;
-    
-  }
+    align-items: center;
+    font-weight: 500;
+    color: #2e384d;
+    transition: 0.2s;
 
-  > div span {
-    flex: 1;
-    width: 30px;
-  }
+    > div {
+        flex: 1;
+        align-items: center;
+        justify-content: space-evenly;
 
-  > div span:first-child {
-    border-right: 2px solid var(--aside);
-  }
+        background: var(--timer);
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+        border-radius: 5px;
+        font-size: 6.5rem;
+        text-align: center;
+        display: flex;
+        width: 140px;
+    }
 
-  > div span:last-child {
-    border-left: 2px solid var(--aside);
-  }
+    > div span {
+        flex: 1;
+        width: 30px;
+    }
 
-  > span {
-    font-size: 6.5rem;
-    margin: 0 0.5rem;
-  }
+    > div span:first-child {
+        border-right: 2px solid var(--aside);
+    }
+
+    > div span:last-child {
+        border-left: 2px solid var(--aside);
+    }
+
+    > span {
+        font-size: 6.5rem;
+        margin: 0 0.5rem;
+    }
+
+    @media (max-width: 1336px) {
+        transform: scale(0.8);
+    }
+
+    @media (max-width: 1280px) {
+        transform: scale(0.7);
+    }
+
+    @media (max-width: 1024px) {
+        transform: scale(0.6);
+    }
 `;
 
 export const MenuItem = styled.button`
@@ -49,7 +59,7 @@ export const MenuItem = styled.button`
 
     width: 100%;
     height: 80px;
-    
+
     background-color: ${(props) => props.color};
     color: var(--title);
     border-radius: 10px;
@@ -67,11 +77,32 @@ export const MenuItem = styled.button`
         transform: scale(1.02);
         filter: contrast(1.5);
     }
+
+    @media (max-width: 1336px) {
+        transform: scale(0.8);
+        :hover {
+            transform: scale(0.9);
+        }
+    }
+
+    @media (max-width: 1280px) {
+        transform: scale(0.7);
+        :hover {
+            transform: scale(0.8);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        transform: scale(0.6);
+        :hover {
+            transform: scale(0.7);
+        }
+    }
 `;
 
 export const Overlay = styled.div`
     background: rgba(242, 243, 245, 0.8);
-    z-index:5;
+    z-index: 5;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -94,9 +125,7 @@ export const Container = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    
 `;
-
 
 export const Strong = styled.strong`
     font-size: 2.25rem;
@@ -117,6 +146,4 @@ export const Button = styled.button`
         transform: scale(1.02);
         filter: contrast(1.5);
     }
-
 `;
-
