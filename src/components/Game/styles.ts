@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: 850px;
-    height: 100%;
     display: grid;
-    margin: 0 auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    margin: auto auto;
 
     perspective: 1000px;
 
@@ -23,16 +19,36 @@ const Card = styled.a`
     justify-content: center;
     align-items: center;
 
-    width: 165px;
-    height: 223.33px;
+    width: 150px;
+    height: 150px;
 
     border-radius: 10px;
 
-    margin: 1.25rem;
+    margin: 10px;
 
     transition: all 0.2s;
     transform-style: preserve-3d;
     transition: transform 0.5s;
+
+    /* @media (max-width: 1440px) {
+        width: 120px;
+        height: 120px;
+    }
+
+    @media (max-width: 1336px) {
+        width: 110px;
+        height: 110px;
+    }
+
+    @media (max-width: 1280px) {
+        width: 90px;
+        height: 90px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 70px;
+        height: 70px;
+    } */
 
     &:hover {
         transform: scale(1.1);
