@@ -176,3 +176,23 @@ export const Button = styled.button`
     filter: brightness(1.3);
   }
 `;
+
+export const Modal = styled.div`
+    display: flex;
+    position: absolute;
+    background: var(--background);
+    align-items: center;
+    flex-direction: column;
+    width: 18%;
+    height: 6%;
+    justify-content: center;
+    z-index: 1;
+    margin-top: 820px;
+    border: 1px solid var(--green);
+`;
+
+export const Text = styled.h2`
+    color: #5c5c5c;
+    margin-top: 5px;
+    font-size: 12px;
+`;

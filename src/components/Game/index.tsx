@@ -208,6 +208,7 @@ const GamePage: React.FC = () => {
     }
   }, [level]);
 
+
   function showCards() {
     if (level === 1) {
       return (
@@ -257,14 +258,14 @@ const GamePage: React.FC = () => {
             <Sheep size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
           </Card>
-          <Card id="card" className="memory-card" data-framework="rooster">
+          {/* <Card id="card" className="memory-card" data-framework="rooster">
             <Rooster size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
           </Card>
           <Card id="card" className="memory-card" data-framework="rooster">
             <Rooster size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
-          </Card>
+          </Card> */}
         </>
       );
     } else if (level === 3) {
@@ -310,14 +311,14 @@ const GamePage: React.FC = () => {
             <Cow size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
           </Card>
-          <Card className="memory-card" data-framework="gorilla">
+          {/* <Card className="memory-card" data-framework="gorilla">
             <Gorilla size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
           </Card>
           <Card className="memory-card" data-framework="gorilla">
             <Gorilla size={140} className="front-face" />
             <img src={cardBack} alt="cardBack" className="back-face" />
-          </Card>
+          </Card> */}
         </>
       );
     } else if (level === 4) {

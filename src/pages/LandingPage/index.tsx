@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import { AiFillPlayCircle, AiFillQuestionCircle } from "react-icons/ai";
 
-import { Button, ButtonContainer, Container, Set } from "./styles";
+import { Button, ButtonContainer, Container, Set, Modal, Text, Accept } from "./styles";
 import Head from "next/head";
 
 const LandingPage: React.FC = () => {
+  const [cookiesModal, setCookiesModal] = useState(true);
   return (
     <Container>
+      {cookiesModal && (
+        <Modal>
+          <Text>Essa página utiliza cookies de navegação para melhor desempenho no jogo.</Text>
+           <Text> Ficará salvo apenas sua pontuação e seu nível.</Text>
+        </Modal>
+      )}
       <Head>
         <title>useMEMOry</title>
       </Head>

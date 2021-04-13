@@ -9,7 +9,7 @@ interface CountdownContextData {
     startCountdown: () => void;
     resetCountdown: () => void;
     pauseCountdown: () => void;
-    timer: () => void;
+    timer: (time: number) => void;
 }
 
 interface CountdownProviderProps {
@@ -47,15 +47,17 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
 
     function timer() {
         if (level===2){
-            setTime(9);
+            setTime(9*60);
+            resetCountdown();
         }
         if (level===3){
-            setTime(8);
+            setTime(8*60);
         }
         if (level===4){
-            setTime(7);
+            setTime(7*60);
         }
     }
+
 
     useEffect(() => {
         if (isActive && time > 0) {
@@ -73,9 +75,9 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         <CountdownContext.Provider value={{
             minutes,
             seconds,
+            timer,
             hasFinished,
             isActive,
-            timer,
             startCountdown,
             resetCountdown,
             pauseCountdown
