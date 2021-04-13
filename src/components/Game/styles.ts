@@ -134,4 +134,26 @@ export const Button = styled.button`
     }
 `;
 
+export const FooterItem= styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    font-size: 45px;
+    background-color: var(--light-green);
+
+    border-radius: 10px;
+    border: 0;
+    
+    transition: 0.2s;
+
+    :hover {
+        transform: scale(1.1);
+        filter: contrast(1.5);
+    }
+`;
+
 export { Container, Card };

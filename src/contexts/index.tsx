@@ -9,7 +9,7 @@ interface CountdownContextData {
     startCountdown: () => void;
     resetCountdown: () => void;
     pauseCountdown: () => void;
-    timer: (time: number) => void;
+    timer: () => void;
 }
 
 interface CountdownProviderProps {
@@ -38,7 +38,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(true);
         setHasFinished(false);
-        setTime(10 * 60);
+        timer();
     }
 
     function pauseCountdown() {
@@ -46,9 +46,11 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
     }
 
     function timer() {
+        if (level===1){
+            setTime(10*60);
+        }
         if (level===2){
             setTime(9*60);
-            resetCountdown();
         }
         if (level===3){
             setTime(8*60);
@@ -56,7 +58,15 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         if (level===4){
             setTime(7*60);
         }
+        if (level===5){
+            setTime(6*60);
+        }
     }
+
+    useEffect(() => {
+        resetCountdown();
+        
+    }, [level])
 
 
     useEffect(() => {

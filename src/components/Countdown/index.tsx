@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CountdownContext } from "../../contexts/index";
 
 import { CountdownContainer, MenuItem, Overlay, Container, Strong, Button } from "./styles";
@@ -11,11 +11,19 @@ export function Countdown() {
 
     function closePlayModal() {
         setPlayModal(false);
-        startCountdown();
+        resetCountdown();
     }
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
     const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
+
+    useEffect(() => {
+        Notification.requestPermission();
+    }, []);
+
+    function music(){
+        new Audio('/audios/play.ogg').play()
+    }
 
     return (
         <div>

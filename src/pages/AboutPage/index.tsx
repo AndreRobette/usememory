@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import React from "react";
-
+import MainHeader from "../../components/MainHeader";
+import {BiArrowBack} from 'react-icons/bi';
 
 import {
   CollaboratorProfile,
@@ -17,7 +19,7 @@ const Pietro = "/images/pietro.png";
 const Julya = "/images/julya.png";
 const Lucas = "/images/lucas.png";
 const Mateus = "/images/putti.png";
-const artigo = "useMemory.pdf"
+const artigo = "useMemory.pdf";
 
 const AboutPage: React.FC = () => {
   return (
@@ -25,7 +27,6 @@ const AboutPage: React.FC = () => {
       <Head>
         <title>useMEMOry</title>
       </Head>
-  
       <h1>
         O que é o <span></span>
         <span>use</span>
@@ -33,11 +34,13 @@ const AboutPage: React.FC = () => {
         <span>ry</span>
       </h1>
       <MainText>
-      É um jogo da memória online que auxilia no tratamento pedagógico de crianças com deficiência intelectual. Busca ajudar na concentração, raciocínio e memória fotográfica.
+        É um jogo da memória online que auxilia no tratamento pedagógico de
+        crianças com deficiência intelectual. Busca ajudar na concentração,
+        raciocínio e memória fotográfica.
       </MainText>
 
       <More href={artigo} target="_blank">
-        Saiba mais
+        Saiba mais sobre o projeto
       </More>
 
       <CollaboratorsContainer>

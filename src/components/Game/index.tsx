@@ -16,18 +16,20 @@ import {
 } from "react-icons/gi";
 
 const cardBack = "/images/cardBack.svg";
-import { Container, Card, Modal, Title, Text, Button } from "./styles";
+import { Container, Card, Modal, Title, Text, Button, FooterItem } from "./styles";
 import { LevelingContext } from "../../contexts/LevelingContext";
 import { CountdownContext } from "../../contexts/index";
-import { levelUp } from "../LevelUpModal";
 import { AiFillPlayCircle } from "react-icons/ai";
 import Link from "next/link";
 import { Icon } from "../MainHeader/styles";
+import { BiHomeAlt } from "react-icons/bi";
 
 const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
+    const [completedModal, setCompletedModal] = useState(false)
     const { resetCountdown, timer } = useContext(CountdownContext);
+
 
     useEffect(() => {
         const cards = document.querySelectorAll(".memory-card");
@@ -193,17 +195,30 @@ const GamePage: React.FC = () => {
     }, [level]);
 
     useEffect(() => {
+        Notification.requestPermission();
+
+    }, []);
+
+    useEffect(() => {
         if (level === 2) {
             setLevelUpModal(true);
+            new Audio('/audios/level2.ogg').play();
         }
         if (level === 3) {
             setLevelUpModal(true);
+            new Audio('/audios/level3.ogg').play();
         }
         if (level === 4) {
             setLevelUpModal(true);
+            new Audio('/audios/level4.ogg').play();
         }
         if (level === 5) {
             setLevelUpModal(true);
+            new Audio('/audios/level5.ogg').play();
+        }
+        if (level === 6) {
+            setCompletedModal(true);
+            new Audio('/audios/completed.ogg').play();
         }
     }, [level]);
 
@@ -476,7 +491,7 @@ const GamePage: React.FC = () => {
         } else if (level === 6) {
             return (
                 <>
-                    <div
+                    {/* <div
                         style={{
                             display: "flex",
                             justifySelf: "center",
@@ -496,7 +511,7 @@ const GamePage: React.FC = () => {
                     >
                         <h1 style={{ color: "#38D438", fontSize: "50px" }}>Parabéns! </h1>
                         <h2 style={{ color: "#5c5c5c", marginTop: "25px", fontSize: "30px" }}>Você terminou o jogo com {points} pontos!</h2>
-                    </div>
+                    </div> */}
                 </>
             );
         }
@@ -518,6 +533,18 @@ const GamePage: React.FC = () => {
                     >
                         Jogar nível {level} <AiFillPlayCircle />
                     </Button>
+                </Modal>
+            )}
+            {completedModal && (
+                <Modal>
+                    <img src="/images/icon.svg"></img>
+                    <Title>Parabéns!</Title>
+                    <Text>Você completou todos os desafios!</Text>
+                    <FooterItem>
+                    <Link href="LandingPage">
+                        <BiHomeAlt size={50}/>
+                    </Link> 
+                    </FooterItem>
                 </Modal>
             )}
             {showCards()}
