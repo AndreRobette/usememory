@@ -28,7 +28,7 @@ const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
     const [completedModal, setCompletedModal] = useState(false)
-    const { resetCountdown, timer } = useContext(CountdownContext);
+    const { resetCountdown, timer, startCountdown } = useContext(CountdownContext);
 
 
     useEffect(() => {
@@ -58,8 +58,33 @@ const GamePage: React.FC = () => {
 
         function checkForMatch() {
             let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
+            let animal = firstCard.dataset.framework;
             isMatch ? disableCards() : unflipCards();
+
+            if (isMatch){
+                
+                if (animal==='cat'){
+                    new Audio('/audios/Cat.mp3').play();
+                }else if (animal==='pig'){
+                    new Audio('/audios/Pig.mp3').play();
+                }else if (animal==='gorilla'){
+                    new Audio('/audios/Monkey.mp3').play();
+                } else if (animal==='sheep'){
+                    new Audio('/audios/Sheep.mp3').play();
+                }else if (animal==='rooster'){
+                    new Audio('/audios/Rooster.mp3').play();
+                }else if (animal==='cow'){
+                    new Audio('/audios/Cow.mp3').play();
+                }else if (animal==='duck'){
+                    new Audio('/audios/Duck.mp3').play();
+                }else if (animal==='bird'){
+                    new Audio('/audios/Bird.mp3').play();
+                }else if (animal==='snake'){
+                    new Audio('/audios/Snake.mp3').play();
+                }else if (animal==='elephant'){
+                    new Audio('/audios/Elephant.mp3').play();
+                }
+            }
         }
 
         function disableCards() {
@@ -112,13 +137,14 @@ const GamePage: React.FC = () => {
                     } else if (level === 5) {
                         setPoints(1000);
                     }
-                    console.log("passou de nivel:", level);
+                    //console.log("passou de nivel:", level);
                 }
             }
         }
 
         cards.forEach((card) => card.addEventListener("click", flipCard));
     }, [level]);
+
 
     useEffect(() => {
         let getCardsToUnflip = document.getElementsByClassName("memory-card flip");
@@ -247,20 +273,20 @@ const GamePage: React.FC = () => {
         } else if (level === 2) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px", gridTemplateRows: "200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="bird">
+                        <Bird size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
-                        <Cat size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="bird">
+                        <Bird size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="cow">
+                        <Cow size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card id="card" className="memory-card" data-framework="sheep">
@@ -292,20 +318,20 @@ const GamePage: React.FC = () => {
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="snake">
+                        <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="snake">
+                        <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="duck">
+                        <Duck size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="duck">
+                        <Duck size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card id="card" className="memory-card" data-framework="rooster">
@@ -361,12 +387,12 @@ const GamePage: React.FC = () => {
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="elephant">
+                        <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="elephant">
+                        <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card className="memory-card" data-framework="cow">
@@ -414,28 +440,28 @@ const GamePage: React.FC = () => {
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="snake">
+                        <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
-                        <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
-                        <Sheep size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="snake">
+                        <Snake size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card id="card" className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="sheep">
+                        <Sheep size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
+                    <Card id="card" className="memory-card" data-framework="elephant">
+                        <Elephant size={140} className="front-face" />
+                        <img src={cardBack} alt="cardBack" className="back-face" />
+                    </Card>
+                    <Card id="card" className="memory-card" data-framework="elephant">
+                        <Elephant size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                     <Card className="memory-card" data-framework="cow">
@@ -516,6 +542,9 @@ const GamePage: React.FC = () => {
             );
         }
     }
+    function buttonModal() {
+        setLevelUpModal(false);
+    }
 
     return (
      
@@ -527,9 +556,7 @@ const GamePage: React.FC = () => {
                     <Title>Parabéns!</Title>
                     <Text>Você passou de nível!</Text>
                     <Button
-                        onClick={() => {
-                            setLevelUpModal(false);
-                        }}
+                        onClick={buttonModal}
                     >
                         Jogar nível {level} <AiFillPlayCircle />
                     </Button>

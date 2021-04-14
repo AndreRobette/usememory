@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { Countdown } from "../components/Countdown";
 import { LevelingContext } from "./LevelingContext";
 
 interface CountdownContextData {
@@ -9,7 +10,6 @@ interface CountdownContextData {
     startCountdown: () => void;
     resetCountdown: () => void;
     pauseCountdown: () => void;
-    timer: () => void;
 }
 
 interface CountdownProviderProps {
@@ -23,7 +23,7 @@ let countdownTimeout: NodeJS.Timeout;
 export function CountdownProvider({ children }: CountdownProviderProps) {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext)
 
-    const [time, setTime] = useState(10 * 60);
+    const [time, setTime] = useState(15 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -38,36 +38,35 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(true);
         setHasFinished(false);
-        timer();
+        setTime(0.03*60)
     }
 
     function pauseCountdown() {
         setIsActive(false);
     }
 
-    function timer() {
-        if (level===1){
-            setTime(10*60);
-        }
-        if (level===2){
-            setTime(9*60);
-        }
-        if (level===3){
-            setTime(8*60);
-        }
-        if (level===4){
-            setTime(7*60);
-        }
-        if (level===5){
-            setTime(6*60);
-        }
+    if(setHasFinished){
+        location.reload();
     }
 
-    useEffect(() => {
-        resetCountdown();
-        
-    }, [level])
+    // useEffect(() => {
+    //     resetCountdown();
+    // }, [level])
 
+    // function timer() {
+    //     if (level===2){
+    //         setTime(9*60);
+    //     }
+    //     else if (level===3){
+    //         setTime(8*60);
+    //     }
+    //     else if (level===4){
+    //         setTime(7*60);
+    //     }
+    //     else if (level===5){
+    //         setTime(6*60);
+    //     }
+    // }
 
     useEffect(() => {
         if (isActive && time > 0) {
@@ -85,7 +84,6 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         <CountdownContext.Provider value={{
             minutes,
             seconds,
-            timer,
             hasFinished,
             isActive,
             startCountdown,

@@ -8,6 +8,10 @@ import Head from "next/head";
 
 const LandingPage: React.FC = () => {
   const [cookiesModal, setCookiesModal] = useState(true);
+
+  function music(){
+    setTimeout(() => {new Audio('/audios/play.ogg').play()}, 1500)
+  }
   return (
     <Container>
       {cookiesModal && (
@@ -60,7 +64,7 @@ const LandingPage: React.FC = () => {
           </Button>
         </Link>
         <Link href="/GamePage">
-          <Button color="#38D438" title="#684500">
+          <Button color="#38D438" title="#684500" onClick={music}>
             <h4>JOGAR</h4> <AiFillPlayCircle />
           </Button>
         </Link>

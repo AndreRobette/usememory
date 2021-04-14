@@ -21,10 +21,6 @@ export function Countdown() {
         Notification.requestPermission();
     }, []);
 
-    function music(){
-        new Audio('/audios/play.ogg').play()
-    }
-
     return (
         <div>
             {playModal && (
