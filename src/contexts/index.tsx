@@ -45,9 +45,9 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         setIsActive(false);
     }
 
-    if(setHasFinished){
-        location.reload();
-    }
+    // if(setHasFinished){
+    //     location.reload();
+    // }
 
     // useEffect(() => {
     //     resetCountdown();

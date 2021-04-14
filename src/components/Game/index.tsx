@@ -28,7 +28,7 @@ const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
     const [completedModal, setCompletedModal] = useState(false)
-    const { resetCountdown, timer, startCountdown } = useContext(CountdownContext);
+    const { resetCountdown, startCountdown } = useContext(CountdownContext);
 
 
     useEffect(() => {
