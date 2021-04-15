@@ -16,7 +16,22 @@ import {
 } from "react-icons/gi";
 
 const cardBack = "/images/cardBack.svg";
-import { Container, Card, Modal, Title, Text, Button, FooterItem, ModalCompleted, TextCompleted, TitleCompleted, ButtonCompleted, ContainerText, TextPoints, Set } from "./styles";
+import {
+    Container,
+    Card,
+    Modal,
+    Title,
+    Text,
+    Button,
+    FooterItem,
+    ModalCompleted,
+    TextCompleted,
+    TitleCompleted,
+    ButtonCompleted,
+    ContainerText,
+    TextPoints,
+    Set,
+} from "./styles";
 import { LevelingContext } from "../../contexts/LevelingContext";
 import { CountdownContext } from "../../contexts/index";
 import { AiFillPlayCircle } from "react-icons/ai";
@@ -549,11 +564,9 @@ const GamePage: React.FC = () => {
     // }
 
     return (
-        
         <CountdownProvider>
             {levelUpModal && (
                 <Modal>
-                    
                     <img src="/images/icon.svg"></img>
                     <Title>Parabéns!</Title>
                     <Text>Você passou de nível!</Text>
@@ -562,52 +575,53 @@ const GamePage: React.FC = () => {
                     </Button>
                 </Modal>
             )}
-            {completedModal && (
-                new Audio("/audios/congratulations.ogg").play(),
-                <ModalCompleted>
-                     <Set>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-                 <div>
-                   <img src="/images/leaf.svg" alt="" />
-                 </div>
-               </Set>
-                    <ContainerText>
-                    <TitleCompleted>Parabéns!</TitleCompleted>
-                    <TextCompleted>Você completou todos os desafios!</TextCompleted>
-                    <TextPoints>Você conquistou 1000 pontos</TextPoints>
-                    <FooterItem>
-                        <Link href="/LandingPage">
-                    <ButtonCompleted >
-                        Voltar para página inicial <BiHomeAlt size={35}/>
-                    </ButtonCompleted>
-                    </Link>
-                    </FooterItem>
-                    </ContainerText>
-                </ModalCompleted>
-            )}
+            {completedModal &&
+                (new Audio("/audios/congratulations.ogg").play(),
+                (
+                    <ModalCompleted>
+                        <Set>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                            <div>
+                                <img src="/images/leaf.svg" alt="" />
+                            </div>
+                        </Set>
+                        <ContainerText>
+                            <TitleCompleted>Parabéns!</TitleCompleted>
+                            <TextCompleted>Você completou todos os desafios!</TextCompleted>
+                            <TextPoints>Você conquistou 1000 pontos</TextPoints>
+                            <FooterItem>
+                                <Link href="/LandingPage">
+                                    <ButtonCompleted>
+                                        Voltar para página inicial <BiHomeAlt size={35} />
+                                    </ButtonCompleted>
+                                </Link>
+                            </FooterItem>
+                        </ContainerText>
+                    </ModalCompleted>
+                ))}
             {showCards()}
         </CountdownProvider>
     );
