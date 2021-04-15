@@ -38,16 +38,17 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(true);
         setHasFinished(false);
-        setTime(0.03*60)
+        setTime(0.5*60)
     }
 
     function pauseCountdown() {
         setIsActive(false);
     }
 
-    // if(setHasFinished){
-    //     location.reload();
-    // }
+    if(setHasFinished){
+
+        location.reload();
+    }
 
     // useEffect(() => {
     //     resetCountdown();
