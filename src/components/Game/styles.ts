@@ -33,21 +33,6 @@ const Card = styled.a`
     /* @media (max-width: 1440px) {
         width: 120px;
         height: 120px;
-    }
-
-    @media (max-width: 1336px) {
-        width: 110px;
-        height: 110px;
-    }
-
-    @media (max-width: 1280px) {
-        width: 90px;
-        height: 90px;
-    }
-
-    @media (max-width: 1024px) {
-        width: 70px;
-        height: 70px;
     } */
 
     &:hover {
@@ -134,7 +119,7 @@ export const Button = styled.button`
     }
 `;
 
-export const FooterItem= styled.button`
+export const FooterItem = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,7 +132,7 @@ export const FooterItem= styled.button`
 
     border-radius: 10px;
     border: 0;
-    
+
     transition: 0.2s;
 
     :hover {

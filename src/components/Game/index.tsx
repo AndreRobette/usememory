@@ -27,9 +27,8 @@ import { BiHomeAlt } from "react-icons/bi";
 const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
-    const [completedModal, setCompletedModal] = useState(false)
+    const [completedModal, setCompletedModal] = useState(false);
     const { resetCountdown, startCountdown } = useContext(CountdownContext);
-
 
     useEffect(() => {
         const cards = document.querySelectorAll(".memory-card");
@@ -61,28 +60,27 @@ const GamePage: React.FC = () => {
             let animal = firstCard.dataset.framework;
             isMatch ? disableCards() : unflipCards();
 
-            if (isMatch){
-                
-                if (animal==='cat'){
-                    new Audio('/audios/Cat.mp3').play();
-                }else if (animal==='pig'){
-                    new Audio('/audios/Pig.mp3').play();
-                }else if (animal==='gorilla'){
-                    new Audio('/audios/Monkey.mp3').play();
-                } else if (animal==='sheep'){
-                    new Audio('/audios/Sheep.mp3').play();
-                }else if (animal==='rooster'){
-                    new Audio('/audios/Rooster.mp3').play();
-                }else if (animal==='cow'){
-                    new Audio('/audios/Cow.mp3').play();
-                }else if (animal==='duck'){
-                    new Audio('/audios/Duck.mp3').play();
-                }else if (animal==='bird'){
-                    new Audio('/audios/Bird.mp3').play();
-                }else if (animal==='snake'){
-                    new Audio('/audios/Snake.mp3').play();
-                }else if (animal==='elephant'){
-                    new Audio('/audios/Elephant.mp3').play();
+            if (isMatch) {
+                if (animal === "cat") {
+                    new Audio("/audios/Cat.mp3").play();
+                } else if (animal === "pig") {
+                    new Audio("/audios/Pig.mp3").play();
+                } else if (animal === "gorilla") {
+                    new Audio("/audios/Monkey.mp3").play();
+                } else if (animal === "sheep") {
+                    new Audio("/audios/Sheep.mp3").play();
+                } else if (animal === "rooster") {
+                    new Audio("/audios/Rooster.mp3").play();
+                } else if (animal === "cow") {
+                    new Audio("/audios/Cow.mp3").play();
+                } else if (animal === "duck") {
+                    new Audio("/audios/Duck.mp3").play();
+                } else if (animal === "bird") {
+                    new Audio("/audios/Bird.mp3").play();
+                } else if (animal === "snake") {
+                    new Audio("/audios/Snake.mp3").play();
+                } else if (animal === "elephant") {
+                    new Audio("/audios/Elephant.mp3").play();
                 }
             }
         }
@@ -144,7 +142,6 @@ const GamePage: React.FC = () => {
 
         cards.forEach((card) => card.addEventListener("click", flipCard));
     }, [level]);
-
 
     useEffect(() => {
         let getCardsToUnflip = document.getElementsByClassName("memory-card flip");
@@ -222,29 +219,28 @@ const GamePage: React.FC = () => {
 
     useEffect(() => {
         Notification.requestPermission();
-
     }, []);
 
     useEffect(() => {
         if (level === 2) {
             setLevelUpModal(true);
-            new Audio('/audios/level2.ogg').play();
+            new Audio("/audios/level2.ogg").play();
         }
         if (level === 3) {
             setLevelUpModal(true);
-            new Audio('/audios/level3.ogg').play();
+            new Audio("/audios/level3.ogg").play();
         }
         if (level === 4) {
             setLevelUpModal(true);
-            new Audio('/audios/level4.ogg').play();
+            new Audio("/audios/level4.ogg").play();
         }
         if (level === 5) {
             setLevelUpModal(true);
-            new Audio('/audios/level5.ogg').play();
+            new Audio("/audios/level5.ogg").play();
         }
         if (level === 6) {
             setCompletedModal(true);
-            new Audio('/audios/completed.ogg').play();
+            new Audio("/audios/completed.ogg").play();
         }
     }, [level]);
 
@@ -431,7 +427,7 @@ const GamePage: React.FC = () => {
             );
         } else if (level === 5) {
             return (
-                <Container style={{ gridTemplateColumns: "200px 200px 200px 200px", gridTemplateRows: "200px 200px 200px" }}>
+                <Container style={{ gridTemplateColumns: "170px 170px 170px 170px", gridTemplateRows: "170px 170px 170px" }}>
                     <Card id="card" className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
                         <img src={cardBack} alt="cardBack" className="back-face" />
@@ -547,17 +543,13 @@ const GamePage: React.FC = () => {
     }
 
     return (
-     
         <CountdownProvider>
-           
             {levelUpModal && (
                 <Modal>
                     <img src="/images/icon.svg"></img>
                     <Title>Parabéns!</Title>
                     <Text>Você passou de nível!</Text>
-                    <Button
-                        onClick={buttonModal}
-                    >
+                    <Button onClick={buttonModal}>
                         Jogar nível {level} <AiFillPlayCircle />
                     </Button>
                 </Modal>
@@ -568,9 +560,9 @@ const GamePage: React.FC = () => {
                     <Title>Parabéns!</Title>
                     <Text>Você completou todos os desafios!</Text>
                     <FooterItem>
-                    <Link href="LandingPage">
-                        <BiHomeAlt size={50}/>
-                    </Link> 
+                        <Link href="LandingPage">
+                            <BiHomeAlt size={50} />
+                        </Link>
                     </FooterItem>
                 </Modal>
             )}

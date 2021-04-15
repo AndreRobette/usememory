@@ -52,6 +52,10 @@ export const Container = styled.div`
         cursor: default;
 
         transition: 0.2s;
+
+        @media (max-width: 1500px) {
+            margin-bottom: 1rem;
+        }
     }
 
     > h1 > span:first-child {
