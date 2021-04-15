@@ -28,7 +28,7 @@ const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
     const [completedModal, setCompletedModal] = useState(false);
-    const { resetCountdown, startCountdown } = useContext(CountdownContext);
+    const { resetCountdown, startCountdown, hasFinished } = useContext(CountdownContext);
     const [resetModal, setResetModal] = useState(false);
 
     useEffect(() => {
@@ -543,8 +543,12 @@ const GamePage: React.FC = () => {
         setLevelUpModal(false);
     }
 
+    if(hasFinished){
+        setTimeout(() => {location.reload()},3000)
+    }
+
     function reloadPage(){
-        setResetModal(true);
+        
     }
 
     return (
@@ -575,8 +579,7 @@ const GamePage: React.FC = () => {
             <Modal>
                 <Text>Infelizmente o tempo acabou!</Text>
                 <Text>Tente novamente!</Text>
-                <Button>
-                    onClick={reloadPage}
+                <Button onClick={reloadPage}>
                 </Button>
             </Modal> )}
             {showCards()}
