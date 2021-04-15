@@ -197,3 +197,19 @@ export const ButtonReset = styled.button`
         filter: contrast(1.5);
     }
 `;
+
+export const ModalGamePage = styled.div`
+     display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //background: rgba(242, 243, 245, 0.8);
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    justify-content: center;
+    z-index: 5;
+`;

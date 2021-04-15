@@ -26,6 +26,8 @@ const Card = styled.a`
 
     margin: 10px;
 
+    cursor: pointer;
+
     transition: all 0.2s;
     transform-style: preserve-3d;
     transition: transform 0.5s;
@@ -154,6 +156,16 @@ export const ModalCompleted = styled.div`
     
 `;
 
+export const ContainerText = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 10px;
+    background: rgba(242, 243, 245, 0.8);
+`;
+
 export const TitleCompleted = styled.h1`
     color: #684500;
     font-size: 70px;
@@ -166,6 +178,12 @@ export const TextCompleted = styled.h2`
     font-size: 30px;
 `;
 
+export const TextPoints = styled.h2`
+    color: black;
+    margin-top: 10px;
+    font-size: 20px;
+`;
+
 export const ButtonCompleted = styled.button`
     display: flex;
     justify-content: center;
@@ -173,16 +191,20 @@ export const ButtonCompleted = styled.button`
 
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 5px;
+    padding: 15px;
 
     background: var(--light-green);
-    color: ${(props) => props.title};
+    color: var(--background);
 
     border: 0;
     border-radius: 10px;
 
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    > svg {
+        margin-left: 10px;
+    }
 
 `;
 

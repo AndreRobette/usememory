@@ -16,7 +16,7 @@ import {
 } from "react-icons/gi";
 
 const cardBack = "/images/cardBack.svg";
-import { Container, Card, Modal, Title, Text, Button, FooterItem, ModalCompleted, TextCompleted, TitleCompleted, ButtonCompleted } from "./styles";
+import { Container, Card, Modal, Title, Text, Button, FooterItem, ModalCompleted, TextCompleted, TitleCompleted, ButtonCompleted, ContainerText, TextPoints } from "./styles";
 import { LevelingContext } from "../../contexts/LevelingContext";
 import { CountdownContext } from "../../contexts/index";
 import { AiFillPlayCircle } from "react-icons/ai";
@@ -564,15 +564,18 @@ const GamePage: React.FC = () => {
             {completedModal && (
                 new Audio("/audios/congratulations.ogg").play(),
                 <ModalCompleted>
+                    <ContainerText>
                     <TitleCompleted>Parabéns!</TitleCompleted>
                     <TextCompleted>Você completou todos os desafios!</TextCompleted>
+                    <TextPoints>Você conquistou 1000 pontos</TextPoints>
                     <FooterItem>
                         <Link href="/LandingPage">
                     <ButtonCompleted >
-                        Voltar para página inicial <BiHomeAlt size={30}/>
+                        Voltar para página inicial <BiHomeAlt size={35}/>
                     </ButtonCompleted>
                     </Link>
                     </FooterItem>
+                    </ContainerText>
                 </ModalCompleted>
             )}
             {showCards()}

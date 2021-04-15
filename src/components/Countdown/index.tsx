@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CountdownContext } from "../../contexts/index";
 
-import { CountdownContainer, MenuItem, Overlay, Container, Strong, Button, Modal, Text, ButtonReset } from "./styles";
+import { CountdownContainer, MenuItem, Overlay, Container, Strong, Button, Modal, Text, ButtonReset, ModalGamePage } from "./styles";
 import { FiPauseCircle, FiStopCircle, FiPlayCircle } from "react-icons/fi";
 
 export function Countdown() {
@@ -9,6 +9,7 @@ export function Countdown() {
 
     const [playModal, setPlayModal] = useState(true);
     const [resetModal, setResetModal] = useState(false);
+    const [pauseModal, setPauseModal] = useState(false);
 
     function closePlayModal() {
         setPlayModal(false);
@@ -17,6 +18,15 @@ export function Countdown() {
 
     function reload(){
         location.reload();
+    }
+
+    function block(){
+        setPauseModal(true);
+        pauseCountdown();
+    }
+    function release(){
+        setPauseModal(false);
+        startCountdown();
     }
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
@@ -47,8 +57,10 @@ export function Countdown() {
                         </Button>
                     </Container>
                 </Overlay>
-            ) }
-            
+            )}
+            {pauseModal && (
+                <ModalGamePage/>
+            )}
             <CountdownContainer>
                 <div>
                     <span>{minuteLeft}</span>
@@ -61,11 +73,11 @@ export function Countdown() {
                 </div>
             </CountdownContainer>
             {isActive ? (
-                <MenuItem onClick={pauseCountdown} color="#F1FF53">
+                <MenuItem onClick={block} color="#F1FF53">
                     Pausar <FiPauseCircle />
                 </MenuItem>
             ) : (
-                <MenuItem onClick={startCountdown} color="#38D438">
+                <MenuItem onClick={release} color="#38D438">
                     Continuar <FiPlayCircle />
                 </MenuItem>
             )}
