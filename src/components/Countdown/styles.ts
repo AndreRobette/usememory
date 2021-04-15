@@ -147,3 +147,53 @@ export const Button = styled.button`
         filter: contrast(1.5);
     }
 `;
+
+export const Modal = styled.div`
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    z-index: 5;
+`;
+
+export const Text = styled.h2`
+    color: #5c5c5c;
+    margin-top: 15px;
+    font-size: 30px;
+`;
+
+export const ButtonReset = styled.button`
+     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 60px;
+
+    background-color: var(--light-green);
+    color: var(--title);
+    border-radius: 10px;
+    border: 0;
+
+    margin: 20px 0;
+    padding: 20px;
+
+    font-weight: bold;
+    font-size: 1.8rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    transition: 0.2s;
+
+    :hover {
+        transform: scale(1.02);
+        filter: contrast(1.5);
+    }
+`;

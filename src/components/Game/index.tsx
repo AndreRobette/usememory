@@ -16,7 +16,7 @@ import {
 } from "react-icons/gi";
 
 const cardBack = "/images/cardBack.svg";
-import { Container, Card, Modal, Title, Text, Button, FooterItem } from "./styles";
+import { Container, Card, Modal, Title, Text, Button, FooterItem, ModalCompleted, TextCompleted, TitleCompleted, ButtonCompleted } from "./styles";
 import { LevelingContext } from "../../contexts/LevelingContext";
 import { CountdownContext } from "../../contexts/index";
 import { AiFillPlayCircle } from "react-icons/ai";
@@ -28,7 +28,7 @@ const GamePage: React.FC = () => {
     const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
     const [completedModal, setCompletedModal] = useState(false);
-    const { resetCountdown, startCountdown, hasFinished } = useContext(CountdownContext);
+    //const { resetCountdown, startCountdown, hasFinished } = useContext(CountdownContext);
     const [resetModal, setResetModal] = useState(false);
 
     useEffect(() => {
@@ -543,15 +543,13 @@ const GamePage: React.FC = () => {
         setLevelUpModal(false);
     }
 
-    if(hasFinished){
-        setTimeout(() => {location.reload()},3000)
-    }
-
-    function reloadPage(){
-        
-    }
+    // if(hasFinished){
+    //     setResetModal(true);
+    //     setTimeout(() => {location.reload()},3000)
+    // }
 
     return (
+        
         <CountdownProvider>
             {levelUpModal && (
                 <Modal>
@@ -564,24 +562,19 @@ const GamePage: React.FC = () => {
                 </Modal>
             )}
             {completedModal && (
-                <Modal>
-                    <img src="/images/icon.svg"></img>
-                    <Title>Parabéns!</Title>
-                    <Text>Você completou todos os desafios!</Text>
+                new Audio("/audios/congratulations.ogg").play(),
+                <ModalCompleted>
+                    <TitleCompleted>Parabéns!</TitleCompleted>
+                    <TextCompleted>Você completou todos os desafios!</TextCompleted>
                     <FooterItem>
-                        <Link href="LandingPage">
-                            <BiHomeAlt size={50} />
-                        </Link>
+                        <Link href="/LandingPage">
+                    <ButtonCompleted >
+                        Voltar para página inicial <BiHomeAlt size={30}/>
+                    </ButtonCompleted>
+                    </Link>
                     </FooterItem>
-                </Modal>
+                </ModalCompleted>
             )}
-            {resetModal && (
-            <Modal>
-                <Text>Infelizmente o tempo acabou!</Text>
-                <Text>Tente novamente!</Text>
-                <Button onClick={reloadPage}>
-                </Button>
-            </Modal> )}
             {showCards()}
         </CountdownProvider>
     );

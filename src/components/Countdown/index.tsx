@@ -1,29 +1,44 @@
 import { useContext, useEffect, useState } from "react";
 import { CountdownContext } from "../../contexts/index";
 
-import { CountdownContainer, MenuItem, Overlay, Container, Strong, Button } from "./styles";
+import { CountdownContainer, MenuItem, Overlay, Container, Strong, Button, Modal, Text, ButtonReset } from "./styles";
 import { FiPauseCircle, FiStopCircle, FiPlayCircle } from "react-icons/fi";
 
 export function Countdown() {
     const { minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown, pauseCountdown } = useContext(CountdownContext);
 
     const [playModal, setPlayModal] = useState(true);
+    const [resetModal, setResetModal] = useState(false);
 
     function closePlayModal() {
         setPlayModal(false);
         resetCountdown();
     }
 
+    function reload(){
+        location.reload();
+    }
+
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
     const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
 
     useEffect(() => {
+        setResetModal(false)
         Notification.requestPermission();
     }, []);
 
     return (
         <div>
-            {playModal && (
+            {hasFinished? (
+                new Audio("/audios/hasFinished.ogg").play(),
+                    <Modal>
+                        <Text>Infelizmente o tempo acabou!</Text>
+                        <ButtonReset onClick={reload}>
+                           Reiniciar
+                        </ButtonReset>
+                    </Modal>
+                ): 
+            playModal && (
                 <Overlay>
                     <Container>
                         <Strong>Clique para iniciar</Strong>
@@ -32,7 +47,8 @@ export function Countdown() {
                         </Button>
                     </Container>
                 </Overlay>
-            )}
+            ) }
+            
             <CountdownContainer>
                 <div>
                     <span>{minuteLeft}</span>
@@ -53,7 +69,7 @@ export function Countdown() {
                     Continuar <FiPlayCircle />
                 </MenuItem>
             )}
-            <MenuItem onClick={resetCountdown} color="#FF5757">
+            <MenuItem onClick={{resetCountdown} && reload} color="#FF5757">
                 Reiniciar <FiStopCircle />
             </MenuItem>
         </div>

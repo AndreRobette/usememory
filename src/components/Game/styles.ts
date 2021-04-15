@@ -124,11 +124,7 @@ export const FooterItem = styled.button`
     justify-content: center;
     align-items: center;
 
-    width: 60px;
-    height: 60px;
-
-    font-size: 45px;
-    background-color: var(--light-green);
+    margin-top: 90px;
 
     border-radius: 10px;
     border: 0;
@@ -140,5 +136,55 @@ export const FooterItem = styled.button`
         filter: contrast(1.5);
     }
 `;
+
+export const ModalCompleted = styled.div`
+    display: flex;
+    position: absolute;
+    background-color: var(--background);
+    background-image: url(/images/background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    
+`;
+
+export const TitleCompleted = styled.h1`
+    color: #684500;
+    font-size: 70px;
+    margin-top: 0;
+`;
+
+export const TextCompleted = styled.h2`
+    color: black;
+    margin-top: 10px;
+    font-size: 30px;
+`;
+
+export const ButtonCompleted = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px;
+
+    background: var(--light-green);
+    color: ${(props) => props.title};
+
+    border: 0;
+    border-radius: 10px;
+
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+`;
+
 
 export { Container, Card };
