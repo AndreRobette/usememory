@@ -59,6 +59,7 @@ export function Countdown() {
                 </Overlay>
             )}
             {pauseModal && (
+                 
                 <ModalGamePage/>
             )}
             <CountdownContainer>
