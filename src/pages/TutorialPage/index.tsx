@@ -18,7 +18,7 @@ function TutorialPage({ children }) {
       </Header>
         <div className="plyr__video-embed" id="player">
           <iframe
-            src={`https://www.youtube.com/embed/3VpX7aQVx00?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1`}
+            src={`https://www.youtube.com/embed/yBNsK44f2_c?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1`}
             allowFullScreen={true}
             allow="autoplay;fullscreen"
             className="plyr__video-embed"
