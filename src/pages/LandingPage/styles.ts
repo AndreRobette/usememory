@@ -207,6 +207,3 @@ export const Text = styled.h2`
 
 
 
-export default function teste() {
-
-}

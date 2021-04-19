@@ -38,8 +38,3 @@ export const Header = styled.div`
 export const Icon = styled.img`
     cursor: pointer;
 `;
-
-
-export default function teste() {
-
-}

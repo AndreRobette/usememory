@@ -301,7 +301,3 @@ export const ButtonCompleted = styled.button`
 
 export { Container, Card };
 
-
-export default function teste() {
-
-}

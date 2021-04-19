@@ -68,7 +68,3 @@ export const FooterItem = styled.button`
 `;
 
 
-
-export default function teste() {
-
-}

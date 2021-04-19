@@ -134,7 +134,3 @@ export const More = styled.a`
     }
 `;
 
-
-export default function teste() {
-
-}
