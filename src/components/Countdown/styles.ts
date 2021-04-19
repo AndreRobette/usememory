@@ -213,3 +213,7 @@ export const ModalGamePage = styled.div`
     justify-content: center;
     z-index: 5;
 `;
+
+export default function teste() {
+
+}

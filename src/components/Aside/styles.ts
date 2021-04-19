@@ -66,3 +66,9 @@ export const FooterItem = styled.button`
         filter: contrast(1.5);
     }
 `;
+
+
+
+export default function teste() {
+
+}

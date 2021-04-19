@@ -204,3 +204,9 @@ export const Text = styled.h2`
     margin-top: 5px;
     font-size: 12px;
 `;
+
+
+
+export default function teste() {
+
+}

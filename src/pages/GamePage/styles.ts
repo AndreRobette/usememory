@@ -11,3 +11,8 @@ export const Grid = styled.div`
 
     height: 100vh;
 `;
+
+
+export default function teste() {
+
+}

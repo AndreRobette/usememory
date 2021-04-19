@@ -133,3 +133,8 @@ export const More = styled.a`
         filter: brightness(1.3);
     }
 `;
+
+
+export default function teste() {
+
+}

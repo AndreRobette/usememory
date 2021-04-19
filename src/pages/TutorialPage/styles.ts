@@ -13,6 +13,7 @@ export const Container = styled.div`
         width: 800px;
         height: 400px;
         margin-top: 50px;
+    }
 `;
 
 export const Video = styled.div`
@@ -37,3 +38,8 @@ export const Header = styled.div`
 export const Icon = styled.img`
     cursor: pointer;
 `;
+
+
+export default function teste() {
+
+}
