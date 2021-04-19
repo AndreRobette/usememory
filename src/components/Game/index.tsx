@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Cookies from "js-cookie";
 
 import { CountdownProvider } from "../../contexts/index";
 import {
@@ -32,19 +31,16 @@ import {
     TextPoints,
     Set,
 } from "./styles";
+
 import { LevelingContext } from "../../contexts/LevelingContext";
-import { CountdownContext } from "../../contexts/index";
 import { AiFillPlayCircle } from "react-icons/ai";
 import Link from "next/link";
-import { Icon } from "../MainHeader/styles";
 import { BiHomeAlt } from "react-icons/bi";
 
 const GamePage: React.FC = () => {
-    const { getIsMatch, level, render, setPoints, points } = useContext(LevelingContext);
+    const { getIsMatch, level, render, setPoints } = useContext(LevelingContext);
     const [levelUpModal, setLevelUpModal] = useState(false);
     const [completedModal, setCompletedModal] = useState(false);
-    //const { resetCountdown, startCountdown, hasFinished } = useContext(CountdownContext);
-    const [resetModal, setResetModal] = useState(false);
 
     useEffect(() => {
         const cards = document.querySelectorAll(".memory-card");
@@ -66,7 +62,6 @@ const GamePage: React.FC = () => {
                 return;
             }
 
-            //else
             secondCard = this;
             checkForMatch();
         }
@@ -126,20 +121,12 @@ const GamePage: React.FC = () => {
             [firstCard, secondCard] = [null, null];
         }
 
-        (function shuffle() {
-            cards.forEach((card) => {
-                let randomPos = Math.floor(Math.random() * render);
-                card.style.order = randomPos;
-            });
-        })();
-
         function checkIfAllHasMatched() {
             if (cards.length === counter) {
                 const flippedCards = document.querySelectorAll(".flip");
 
-                //Todos os cards deram match (usuário ganhou o nível)
                 if (flippedCards.length === cards.length) {
-                    getIsMatch(true);
+                    getIsMatch(true)
                     if (level === 1) {
                         setPoints(100);
                     } else if (level === 2) {
@@ -151,7 +138,6 @@ const GamePage: React.FC = () => {
                     } else if (level === 5) {
                         setPoints(1000);
                     }
-                    //console.log("passou de nivel:", level);
                 }
             }
         }
@@ -161,7 +147,6 @@ const GamePage: React.FC = () => {
 
     useEffect(() => {
         let getCardsToUnflip = document.getElementsByClassName("memory-card flip");
-        console.log("cima", getCardsToUnflip.length);
 
         for (var i = 0; i < getCardsToUnflip.length; i++) {
             console.log(getCardsToUnflip.length);
@@ -231,6 +216,7 @@ const GamePage: React.FC = () => {
             ("");
             cardToUnflip[0].classList.remove("flip");
         }
+
     }, [level]);
 
     useEffect(() => {
@@ -256,312 +242,209 @@ const GamePage: React.FC = () => {
         }
         if (level === 6) {
             setCompletedModal(true);
-            new Audio("/audios/completed.ogg").play();
         }
     }, [level]);
+
+    function shuffle() {
+        var randomNumber = Math.floor(Math.random() * render);
+        return randomNumber;
+    }
+
 
     function showCards() {
         if (level === 1) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px", gridTemplateRows: "200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
                 </Container>
             );
         } else if (level === 2) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px", gridTemplateRows: "200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="bird">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="bird">
                         <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="bird">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="bird">
                         <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cow">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cow">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    {/* <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
-                        <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
                 </Container>
             );
         } else if (level === 3) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px 200px", gridTemplateRows: "200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="snake">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="snake">
                         <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="snake">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="snake">
                         <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="duck">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="duck">
                         <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="duck">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="duck">
                         <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="rooster">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="rooster">
                         <Rooster size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    {/* <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="cow">
-                        <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    {/* <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
+
                 </Container>
             );
         } else if (level === 4) {
             return (
                 <Container style={{ gridTemplateColumns: "200px 200px 200px 200px 200px", gridTemplateRows: "200px 200px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="pig">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="pig">
                         <Pig size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="elephant">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="elephant">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="cow">
+                    <Card className="memory-card" theme={shuffle()} data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="cow">
+                    <Card className="memory-card" theme={shuffle()} data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    {/* <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="gorilla">
-                        <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
-                    {/* <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    {/* <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
+
                 </Container>
             );
         } else if (level === 5) {
             return (
                 <Container style={{ gridTemplateColumns: "170px 170px 170px 170px", gridTemplateRows: "170px 170px 170px" }}>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="cat">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="cat">
                         <Cat size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="snake">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="snake">
                         <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="snake">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="snake">
                         <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="sheep">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="sheep">
                         <Sheep size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="elephant">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card id="card" className="memory-card" data-framework="elephant">
+                    <Card id="card" theme={shuffle()} className="memory-card" data-framework="elephant">
                         <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="cow">
+                    <Card theme={shuffle()} className="memory-card" data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="cow">
+                    <Card theme={shuffle()} className="memory-card" data-framework="cow">
                         <Cow size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="gorilla">
+                    <Card theme={shuffle()} className="memory-card" data-framework="gorilla">
                         <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    <Card className="memory-card" data-framework="gorilla">
+                    <Card theme={shuffle()} className="memory-card" data-framework="gorilla">
                         <Gorilla size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
+                        <img draggable="false" src={cardBack} alt="cardBack" className="back-face" />
                     </Card>
-                    {/* <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="duck">
-                        <Duck size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="bird">
-                        <Bird size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
-                    {/* <Card className="memory-card" data-framework="snake">
-                        <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="snake">
-                        <Snake size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    {/* <Card className="memory-card" data-framework="elephant">
-                        <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card>
-                    <Card className="memory-card" data-framework="elephant">
-                        <Elephant size={140} className="front-face" />
-                        <img src={cardBack} alt="cardBack" className="back-face" />
-                    </Card> */}
+
                 </Container>
-            );
-        } else if (level === 6) {
-            return (
-                <>
-                    {/* <div
-                        style={{
-                            display: "flex",
-                            justifySelf: "center",
-                            alignSelf: "center",
-                            flexDirection: "column",
-                            wordWrap: "break-word",
-                            width: "50%",
-                            height: "350px",
-                            justifyContent: "space-evenly",
-                            textAlign: "center",
-                            border: "5px solid #1bb31b",
-                            borderRadius: "20px",
-                            padding: "30px",
-                            cursor: "default",
-                            backgroundColor: "white",
-                        }}
-                    >
-                        <h1 style={{ color: "#38D438", fontSize: "50px" }}>Parabéns! </h1>
-                        <h2 style={{ color: "#5c5c5c", marginTop: "25px", fontSize: "30px" }}>Você terminou o jogo com {points} pontos!</h2>
-                    </div> */}
-                </>
             );
         }
     }
     function buttonModal() {
         setLevelUpModal(false);
     }
-
-    // if(hasFinished){
-    //     setResetModal(true);
-    //     setTimeout(() => {location.reload()},3000)
-    // }
 
     return (
         <CountdownProvider>
@@ -577,51 +460,51 @@ const GamePage: React.FC = () => {
             )}
             {completedModal &&
                 (new Audio("/audios/congratulations.ogg").play(),
-                (
-                    <ModalCompleted>
-                        <Set>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                            <div>
-                                <img src="/images/leaf.svg" alt="" />
-                            </div>
-                        </Set>
-                        <ContainerText>
-                            <TitleCompleted>Parabéns!</TitleCompleted>
-                            <TextCompleted>Você completou todos os desafios!</TextCompleted>
-                            <TextPoints>Você conquistou 1000 pontos</TextPoints>
-                            <FooterItem>
-                                <Link href="/LandingPage">
-                                    <ButtonCompleted>
-                                        Voltar para página inicial <BiHomeAlt size={35} />
-                                    </ButtonCompleted>
-                                </Link>
-                            </FooterItem>
-                        </ContainerText>
-                    </ModalCompleted>
-                ))}
+                    (
+                        <ModalCompleted>
+                            <Set>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                                <div>
+                                    <img src="/images/leaf.svg" alt="" />
+                                </div>
+                            </Set>
+                            <ContainerText>
+                                <TitleCompleted>Parabéns!</TitleCompleted>
+                                <TextCompleted>Você completou todos os desafios!</TextCompleted>
+                                <TextPoints>Você conquistou 1000 pontos</TextPoints>
+                                <FooterItem>
+                                    <Link href="/LandingPage">
+                                        <ButtonCompleted>
+                                            Voltar para página inicial <BiHomeAlt size={35} />
+                                        </ButtonCompleted>
+                                    </Link>
+                                </FooterItem>
+                            </ContainerText>
+                        </ModalCompleted>
+                    ))}
             {showCards()}
         </CountdownProvider>
     );

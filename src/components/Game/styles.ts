@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const animate = keyframes`
     0%{ 
@@ -102,6 +102,7 @@ const Container = styled.div`
 
 const Card = styled.a`
     background-color: var(--light-green);
+    order: ${props => props.theme};
 
     position: relative;
     display: flex;

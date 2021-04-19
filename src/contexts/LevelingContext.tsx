@@ -22,18 +22,17 @@ export function LevelingProvider({ children }: LevelingProviderProps) {
     const [points, setPoint] = useState<number>(0);
 
     function getIsMatch(isMatch: boolean) {
-       if (isMatch === true) {
-        setTimeout(() =>{
-            setLevel(level+1);
-            setRender(render + 4);
-            isMatch = false;}, 2000)
+        if (isMatch === true) {
+            setTimeout(() => {
+                setLevel(level + 1);
+                setRender(render + 4);
+                isMatch = false;
+            }, 2000)
             setPoints(points);
         } else if (isMatch === false) {
             console.log('False');
         }
     }
-
-    console.log('level aq', level);
 
     function setPoints(points: number) {
         setPoint(points);
