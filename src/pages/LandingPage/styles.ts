@@ -21,7 +21,7 @@ const animate = keyframes`
     80%{ 
       transform: translateX(-20px) rotate(180deg);
     }
-    100%{
+    100%{ 
       opacity: 0;
       top: 110%;
       transform: translateX(-20px) rotate(225deg);
