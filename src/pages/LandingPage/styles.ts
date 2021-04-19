@@ -185,7 +185,7 @@ export const Modal = styled.div`
     top: 90%;
     transform: translate(-50%, -50%);
 
-    width: 400px;
+    width: 375px;
     height: 70px;
 
     display: flex;

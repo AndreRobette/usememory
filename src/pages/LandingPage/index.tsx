@@ -9,15 +9,15 @@ import Head from "next/head";
 const LandingPage: React.FC = () => {
   const [cookiesModal, setCookiesModal] = useState(true);
 
-  function music(){
-    setTimeout(() => {new Audio('/audios/play.ogg').play()}, 1500)
+  function music() {
+    setTimeout(() => { new Audio('/audios/play.ogg').play() }, 1500)
   }
   return (
     <Container>
       {cookiesModal && (
         <Modal>
-          <Text>Essa página utiliza cookies de navegação para melhor desempenho no jogo.</Text>
-           <Text> Ficará salvo apenas sua pontuação e seu nível.</Text>
+          <Text>O jogo está otimizado para dispositivos com telas acima de 1366 x 768 pixels.</Text>
+          <Text> Utilize aparelhos como Notebooks e Computadores!</Text>
         </Modal>
       )}
       <Head>
