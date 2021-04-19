@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
+export default () => {
+    return "Show page working ! ";
+}
+
 const animate = keyframes`
     0%{ 
       opacity: 0;

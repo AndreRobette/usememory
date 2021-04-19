@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export default () => {
+    return "Show page working ! ";
+}
+
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;

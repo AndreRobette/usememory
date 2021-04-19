@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export default () => {
+    return "Show page working ! ";
+}
+
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: 75% auto;
