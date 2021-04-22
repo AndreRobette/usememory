@@ -1,9 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import React from "react";
-import MainHeader from "../../components/MainHeader";
-import {BiArrowBack} from 'react-icons/bi';
 
 import {
   CollaboratorProfile,

@@ -1,11 +1,10 @@
-import React, { useEffect, useState, createContext, ReactNode } from 'react'
+import React, { useState, createContext, ReactNode } from 'react'
 
 interface LevelingContextData {
     level: number;
     points: number;
     setPoints: (points: number) => void;
     render: number;
-    /*     points: number; */
     getIsMatch: (isMatch: boolean) => void;
 }
 

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 
-import { Container, Footer, FooterItem, Header, MenuContainer, Title, Div } from "./styles";
+import { Container, Footer, FooterItem, Header, MenuContainer, Title } from "./styles";
 
 import { BiHomeAlt } from "react-icons/bi";
-import { FiVolume2, FiPauseCircle, FiStopCircle } from "react-icons/fi";
 import { Countdown } from "../Countdown/index";
 import { CountdownProvider } from "../../contexts/index";
 import Link from "next/link";
@@ -28,9 +27,6 @@ function Aside() {
                         <BiHomeAlt />
                     </Link>
                 </FooterItem>
-                {/* <FooterItem>
-          <FiVolume2 />
-        </FooterItem> */}
             </Footer>
         </Container>
     );

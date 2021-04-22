@@ -7,7 +7,7 @@ import { Button, ButtonContainer, Container, Set, Modal, Text } from "./styles";
 import Head from "next/head";
 
 const LandingPage: React.FC = () => {
-  const [cookiesModal, setCookiesModal] = useState(true);
+  const [cookiesModal] = useState(true);
 
   function music() {
     setTimeout(() => { new Audio('/audios/play.ogg').play() }, 1500)

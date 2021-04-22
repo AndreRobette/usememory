@@ -122,11 +122,6 @@ const Card = styled.a`
     transform-style: preserve-3d;
     transition: transform 0.5s;
 
-    /* @media (max-width: 1440px) {
-        width: 120px;
-        height: 120px;
-    } */
-
     &:hover {
         transform: scale(1.1);
     }
