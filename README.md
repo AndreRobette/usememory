@@ -24,21 +24,19 @@
 
 
 ## <div id="tecnologias"> 🧰 Toolbox
-
-<div align="center"> <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" width="50" height="50"> <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="React" width="50" height="50"> <img src="https://cdn.auth0.com/blog/logos/nextjs-logo.png" alt="React" width="50" height="50"> <img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/vercel-deploy.png?itok=AyGlptNc" alt="React" width="50" height="50">
-
+<div align="center"> <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" width="50" height="50"> <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="React" width="50" height="50"> <img src="https://cdn.auth0.com/blog/logos/nextjs-logo.png" alt="React" width="50" height="50"> <img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/vercel-deploy.png?itok=AyGlptNc" alt="React" width="50" height="50"></div>
 </div>
 
 
 
 &nbsp;
-## <div id="sobre"> <h2><strong> Sobre o Projeto </strong></h2>
+## <div id="sobre"> <strong />Sobre o Projeto:
 ### <p align="justify">A equipe é estudante do curso Técnico em Informática pelo IFSC e, no penúltimo período, tivemos as matérias de "Oficina de Integração 4 (OI4) e Tecnologias Assistivas". Fomos desafiados a criar uma aplicação que utilizasse os conceitos das duas matérias, com o Núcleo Temático da OI4 que era "Ética, Cidadania e Informática".</p>
 
 ### <p align="justify"> Desenvolvido em React, Typescript e Nextjs, o useMemory foi publicado na Vercel, uma plataforma de hospedagem gratuita para projetos pequenos. Com um prazo curto, otimizamos o jogo para o uso em dispositivos com resoluções acima de 1366 x 768 píxels.</p> 
 
 ### <p align="justify"> Acesse o artigo do projeto [aqui](https://usememory-ifsc.vercel.app/useMemory.pdf).</p> </div>
-
+</div>
 
 &nbsp;
 
