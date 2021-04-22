@@ -66,7 +66,7 @@ $ yarn dev
 ## <strong id="contribuidores"> Contribuidores </strong> 
 * Clique na imagem para acessar o perfil no linkedin
 
-#### <table> 
+#### <table align="center"> 
 <tr>
     <td border="none" align="center"><a href="https://www.linkedin.com/in/andr%C3%A9-robette-7137891a1/" target="_blank"><img src="https://usememory-ifsc.vercel.app/images/andre.png" width="100px;" alt=""/><br /><sub><b>André Robette</b></sub></a></td>
     <td border="none" align="center"><a href="https://www.linkedin.com/in/gabriel-pietro-de-souza-9057431b7/" target="_blank"><img src="https://usememory-ifsc.vercel.app/images/pietro.png" width="100px;" alt=""/><br /><sub><b>Gabriel P. de Souza</b></sub></a></td>
